@@ -1,0 +1,4 @@
+INFO: Successfully converted health_lapses.parquet to CSV
+START RequestId: test-request-id Version: $LATEST
+END RequestId: test-request-id
+REPORT Duration: 100ms Billed Duration: 200ms Memory Size: 128MB

@@ -1,0 +1,11 @@
+aws s3api put-bucket-notification-configuration \
+  --bucket sources-bucket-analytics \
+  --notification-configuration '{
+    "LambdaFunctionConfigurations": [{
+      "Id": "ParquetTrigger",
+      "LambdaFunctionArn": "arn:aws:lambda:eu-north-1:806452458173:function:parquet-to-csv-converter",
+      "Events": ["s3:ObjectCreated:*"],
+      "Filter": {
+        "Key": {"FilterRules": [{"Name": "suffix", "Value": ".parquet"}]}
+    }]
+  }'
